@@ -12,6 +12,7 @@ matrix:
 
     - os: windows
       before_install:
+      - type make
       - wget https://bitbucket.org/mitrich_k/inno-download-plugin/downloads/idpsetup-1.5.1.exe
       install:
       - choco install innosetup --version=5.6.1 -y
