@@ -11,6 +11,7 @@ matrix:
   include:
 
     - os: windows
+      language: shell
       before_install:
       - type make
       - wget https://bitbucket.org/mitrich_k/inno-download-plugin/downloads/idpsetup-1.5.1.exe
