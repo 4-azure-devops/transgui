@@ -13,11 +13,10 @@ matrix:
     - os: windows
       language: shell
       before_install:
-      - type make
       - wget https://bitbucket.org/mitrich_k/inno-download-plugin/downloads/idpsetup-1.5.1.exe
       install:
       - choco install innosetup --version=5.6.1 -y
-      - choco install lazarus -y
+      - choco install lazarus make -y
       - idpsetup-1.5.1.exe /VERYSILENT
       script:
       - cd setup/win
