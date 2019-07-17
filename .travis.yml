@@ -1,7 +1,7 @@
 language: minimal
 
 git:
-  depth: 10
+  depth: 1
 
 env:
   global:
@@ -22,38 +22,6 @@ matrix:
       - cd setup/win
       - make_setup.bat  c:\lazarus\ "c:\Program Files (x86)\Inno Setup 5\"
       - ls Release/
-    - os: linux
-      dist: xenial
-      services:
-      - docker
-      env:
-      - task=build
-      - arch=amd64
-      script:
-      - docker run -e DEBIAN_FRONTEND=noninteractive -it --rm -v "${PWD}:/transgui" debian:stretch-backports bash -c "cd /transgui/setup/unix/ && ./debian-ubuntu-install_deps.sh && apt upgrade -y && ./build.sh"
-      after_success:
-      - md5sum ./Release/transgui-$PROG_VER-x86_64-Linux.txz
-      - sha1sum ./Release/transgui-$PROG_VER-x86_64-Linux.txz
-      - sha256sum ./Release/transgui-$PROG_VER-x86_64-Linux.txz
-      - setup/upload_asset.sh ./Release/transgui-$PROG_VER-x86_64-Linux.txz
-
-    - os: osx
-      osx_image: xcode9.4
-      env:
-      - task=build
-      - arch=osx
-      - sourceforge_mirror=pilotfiber
-      install:
-      - sh -c 'cd setup/macosx && ./compilers.sh'
-      script:
-      - echo -en 'travis_fold:start:build'
-      - sh -c 'cd setup/macosx && ./create_app_new.sh'
-      - echo -en 'travis_fold:end:build'
-      after_success:
-      - md5 ./setup/macosx/transgui-$PROG_VER.dmg
-      - shasum -a 1 ./setup/macosx/transgui-$PROG_VER.dmg
-      - shasum -a 256 ./setup/macosx/transgui-$PROG_VER.dmg
-      - setup/upload_asset.sh ./setup/macosx/transgui-$PROG_VER.dmg ;
 
 notifications:
   email:
