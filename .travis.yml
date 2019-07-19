@@ -20,8 +20,12 @@ matrix:
       - ./sdfa.bat
       - choco install gnuwin32-coreutils.install  lazarus make -y
       script:
+      - export LAZARUS_DIR=c:\lazarus
+      - export PATH=/c/lazarus/fpc/3.0.4/bin:$PATH
       - cd setup/win
-      - ./make_setup.bat  c:\lazarus\ "c:\Program Files (x86)\Inno Setup 5\"
+      - /c/lazarus/lazbuild -B ../../transgui.lpi
+      - make -C ../.. clean
+      - make -C ../.. all
       - ls Release/
 
 notifications:
