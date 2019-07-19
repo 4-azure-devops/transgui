@@ -21,7 +21,7 @@ matrix:
       - choco install lazarus make -y
       script:
       - cd setup/win
-      - make_setup.bat  c:\lazarus\ "c:\Program Files (x86)\Inno Setup 5\"
+      - ./make_setup.bat  c:\lazarus\ "c:\Program Files (x86)\Inno Setup 5\"
       - ls Release/
 
 notifications:
