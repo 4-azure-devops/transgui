@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 if (%1) == () goto usage
 if (%2) == () goto usage
@@ -6,7 +6,7 @@ if (%2) == () goto usage
 set path=%1;%1\fpc\3.0.4\bin\i386-win32;%path%
 set LAZARUS_DIR=%1
 
-lazbuild -B ../../transgui.lpi
+c:\lazarus\lazbuild -B ../../transgui.lpi
 make -C ../.. clean LAZARUS_DIR=%1
 make -C ../.. all   LAZARUS_DIR=%1
 if errorlevel 1 goto err
