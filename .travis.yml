@@ -20,6 +20,7 @@ matrix:
       - ./sdfa.bat
       - choco install lazarus make -y
       script:
+      - ls /c/lazarus/fpc/
       - export LAZARUS_DIR=c:\lazarus
       - export PATH=/c/lazarus/fpc/3.0.4/bin:$PATH
       - /c/lazarus/lazbuild -B transgui.lpi
