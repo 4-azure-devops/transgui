@@ -22,7 +22,7 @@ matrix:
       script:
       - ls /c/lazarus/fpc/
       - export LAZARUS_DIR="c:\lazarus"
-      - export PATH=/c/lazarus/fpc/3.0.4/bin:$PATH
+      - export PATH=$PATH:/c/lazarus/fpc/3.0.4/bin
       - /c/lazarus/lazbuild -B transgui.lpi
       - type make
       - make clean
