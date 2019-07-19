@@ -18,14 +18,13 @@ matrix:
       - choco install innosetup --version=5.6.1 -y
       - echo "idpsetup-1.5.1.exe /VERYSILENT" > sdfa.bat
       - ./sdfa.bat
-      - choco install gnuwin32-coreutils.install  lazarus make -y
+      - choco install lazarus make -y
       script:
       - export LAZARUS_DIR=c:\lazarus
       - export PATH=/c/lazarus/fpc/3.0.4/bin:$PATH
-      - cd setup/win
-      - /c/lazarus/lazbuild -B ../../transgui.lpi
-      - make -C ../.. clean
-      - make -C ../.. all
+      - /c/lazarus/lazbuild -B transgui.lpi
+      - make clean
+      - make all
       - ls Release/
 
 notifications:
