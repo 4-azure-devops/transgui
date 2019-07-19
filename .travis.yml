@@ -16,7 +16,7 @@ matrix:
       - wget https://bitbucket.org/mitrich_k/inno-download-plugin/downloads/idpsetup-1.5.1.exe
       install:
       - choco install innosetup --version=5.6.1 -y
-      - echo "./idpsetup-1.5.1.exe /VERYSILENT" > sdfa.bat
+      - echo "idpsetup-1.5.1.exe /VERYSILENT" > sdfa.bat
       - ./sdfa.bat
       - choco install lazarus make -y
       script:
