@@ -18,7 +18,7 @@ matrix:
       - choco install innosetup --version=5.6.1 -y
       - echo "idpsetup-1.5.1.exe /VERYSILENT" > sdfa.bat
       - ./sdfa.bat
-      - choco install lazarus make -y
+      - choco install gnuwin32-coreutils.install  lazarus make -y
       script:
       - cd setup/win
       - ./make_setup.bat  c:\lazarus\ "c:\Program Files (x86)\Inno Setup 5\"
