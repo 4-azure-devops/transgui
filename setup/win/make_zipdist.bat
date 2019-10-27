@@ -21,9 +21,7 @@ if errorlevel 1 goto err
 make -C ../.. zipdist
 if errorlevel 1 goto err
 
-pause
 exit /b 0
 
 :err
-pause
 exit /b 1

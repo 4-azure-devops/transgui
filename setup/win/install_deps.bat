@@ -54,4 +54,3 @@ if exist "C:\ProgramData\chocolatey\bin\upx.exe" (
     choco install upx -y
 )
 
-pause
